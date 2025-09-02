@@ -15,7 +15,6 @@
 ## 2.数据集下载
 
 terminal输入：
-
 ```
 wget https://huggingface.co/datasets/QingyiSi/Alpaca-CoT/raw/main/alpaca_data.json -O /root/（your path）/BitNet-main/gpu/checkpoints/alpaca_data.json
 ```
@@ -23,7 +22,6 @@ wget https://huggingface.co/datasets/QingyiSi/Alpaca-CoT/raw/main/alpaca_data.js
 ## 3.开始调试
 
 将finetune_bitnet.py放入BitNet-main/gpu/文件夹中，随后在BitNet-main/gpu的地址下输入下面代码：
-
 ```
 python finetune_bitnet.py
 --model_path /root/lanyun-tmp/BitNet-main/gpu/checkpoints/model_state_int2.pt
@@ -46,4 +44,21 @@ python finetune_bitnet.py
 ```
 
 微调代码解释：
-
+```
+--model_path：                  预训练模型的权重文件路径。用于加载已有模型参数。
+--dataset_path：                训练用的数据集（JSON格式）路径。
+--tokenizer_path：              分词器模型路径。用于文本分词。
+--save_path：                   微调后模型保存路径。
+--epochs：                      训练轮数（epoch），即所有数据集被训练的次数。
+--batch_size：                  每次训练的样本数量。
+--seq_len：                     最大序列长度，输入文本被截断或填充到该长度。
+--learning_rate：               优化器的学习率。
+--gradient_accumulation_steps： 梯度累积步数，累计一定步数后再更新参数，适合显存有限时使用。
+--num_workers：                 用于数据加载的子进程数量。
+--dataset_fraction：            使用数据集的比例（如0.5表示只用一半数据）。
+--validation_split_fraction：   验证集占总数据的比例。
+--eval_interval：每隔多少步进行一次验证。
+--max_grad_norm：梯度裁剪的最大范数，防止梯度爆炸。
+--early_stopping_patience：早停策略的耐心值，验证损失多次未提升则提前停止训练。
+--early_stopping_min_delta：验证损失提升的最小阈值，低于该值不算提升。
+```
