@@ -57,8 +57,12 @@ python finetune_bitnet.py
 --num_workers：                 用于数据加载的子进程数量。
 --dataset_fraction：            使用数据集的比例（如0.5表示只用一半数据）。
 --validation_split_fraction：   验证集占总数据的比例。
---eval_interval：每隔多少步进行一次验证。
---max_grad_norm：梯度裁剪的最大范数，防止梯度爆炸。
---early_stopping_patience：早停策略的耐心值，验证损失多次未提升则提前停止训练。
---early_stopping_min_delta：验证损失提升的最小阈值，低于该值不算提升。
+--eval_interval：               每隔多少步进行一次验证。
+--max_grad_norm：               梯度裁剪的最大范数，防止梯度爆炸。
+--early_stopping_patience：     早停策略的耐心值，验证损失多次未提升则提前停止训练。
+--early_stopping_min_delta：    验证损失提升的最小阈值，低于该值不算提升。
 ```
+
+## 注意：
+
+本代码在调试时发现可能是由于文本过于简单或者是预训练效果较好，学习率提高后容易出现梯度爆炸，且数据集验证成功率非常高，因此微调的学习率较低。
