@@ -1,16 +1,16 @@
 # bitnet_finetune
 
 # 项目内容：
-本项目为复现1.58bit的微调代码，本复现代码基于https://github.com/microsoft/BitNet；
+本项目为复现1.58bit的微调代码，本复现代码基于 https://github.com/microsoft/BitNet ；
 
-本项目微调使用的数据集为alpaca数据集
+本项目微调使用的数据集为alpaca数据集。
 
 
 # 使用方法：
 
 ## 1.下载模型并复现GPU推理
 
-下载https://github.com/microsoft/BitNet的代码，并根据代码的readme文件复现GPU推理
+下载 https://github.com/microsoft/BitNet 的代码，并根据代码的readme文件复现GPU推理。
 
 ## 2.数据集下载
 
